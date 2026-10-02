@@ -1,0 +1,56 @@
+# =====================================================================
+# UWB-MoE Master Configuration
+# =====================================================================
+
+data:
+  dataset_url: "https://www.iis.fraunhofer.de/content/dam/iis/de/doc/lv/dataanalytics/uwb_dataset.zip"
+  raw_data_dir: "data/raw"
+  processed_data_dir: "data/processed"
+  train_file: "uwb_test_data.hdf5"
+  test_file: "uwb_test_data.hdf5"
+  cir_length: 152
+  val_split_ratio: 0.2
+  batch_size: 32
+  num_workers: 0             # 0 for robust Windows support
+  pin_memory: true
+  save_preprocessed: false
+
+model:
+  cir_length: 152
+  n_anchors: 8
+  embedding_dim: 16
+  cnn_channels:
+    - 16
+    - 32
+  cnn_kernel_size: 5
+  pool_size: 16
+  feature_dim: 128
+  gate_hidden_dim: 64
+  num_experts: 2             # 0: LOS, 1: NLOS
+  expert_hidden_dim: 128
+  position_head_hidden: 64
+  output_dim: 2              # 2D coordinates (X, Y)
+  diversity_loss_coeff: 0.01
+
+train:
+  seed: 42
+  epochs: 20
+  learning_rate: 0.001       # 1e-3
+  weight_decay: 0.00001      # 1e-5
+  device: "auto"             # 'auto', 'cuda', or 'cpu'
+  checkpoint_dir: "outputs/checkpoints"
+  save_best_only: true
+  early_stopping_patience: 10
+  log_interval: 200
+
+eval:
+  checkpoint_path: null      # defaults to outputs/checkpoints/best_model.pt
+  output_dir: "outputs/eval"
+  plot_histogram: true
+  histogram_bins: 50
+  plot_trajectories: true
+
+logging:
+  level: "INFO"
+  log_file: "outputs/training.log"
+  verbose: true
