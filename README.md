@@ -3,6 +3,7 @@
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-ee4c2c.svg)](https://pytorch.org/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/IamMosiow/uwb-moe-positioning/actions/workflows/ci.yml/badge.svg)](https://github.com/IamMosiow/uwb-moe-positioning/actions/workflows/ci.yml)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 A modular, production-grade PyTorch framework for indoor positioning using Ultra-Wideband (UWB) Channel Impulse Response (CIR) envelopes and Time Difference (TD) measurements. 
@@ -134,8 +135,8 @@ A modular, production-grade PyTorch framework for indoor positioning using Ultra
 
 ```bash
 # Clone the repository
-git clone https://github.com/IamMosiow/Masters-Thesis-Files.git
-cd "Masters-Thesis-Files"
+git clone https://github.com/IamMosiow/uwb-moe-positioning.git
+cd "uwb-moe-positioning"
 
 # Create and activate environment
 conda create -n uwb_moe python=3.10 -y
@@ -290,7 +291,50 @@ Key configuration options in `configs/default.yaml`:
 
 ---
 
-## Citation & Acknowledgments
+## Citation
 
-- **Dataset**: Fraunhofer Institute for Integrated Circuits (IIS) UWB Localization Dataset.
-- If you use this codebase for academic research, please cite the underlying thesis and project repository.
+If you use this codebase, methodology, or models in your academic research, please cite this work using the following BibTeX entries:
+
+### Thesis & Software
+```bibtex
+@mastersthesis{mousavi2026uwbmoe,
+  author       = {Seyyed Mostafa Mousavi},
+  title        = {Deep Mixture of Experts for Ultra-Wideband (UWB) Indoor Localization},
+  school       = {Your University / Institution},
+  year         = {2026},
+  url          = {https://github.com/IamMosiow/uwb-moe-positioning}
+}
+
+@software{mousavi2026uwbmoe_code,
+  author       = {Seyyed Mostafa Mousavi},
+  title        = {UWB-MoE: Modular Mixture-of-Experts for Ultra-Wideband Indoor Positioning},
+  year         = {2026},
+  publisher    = {GitHub},
+  journal      = {GitHub repository},
+  howpublished = {\url{https://github.com/IamMosiow/uwb-moe-positioning}}
+}
+```
+
+### Dataset Citation
+If utilizing the benchmark dataset, please also cite the Fraunhofer IIS UWB dataset:
+```bibtex
+@misc{fraunhofer_uwb_dataset,
+  author       = {{Fraunhofer Institute for Integrated Circuits (IIS)}},
+  title        = {UWB Indoor Localization Dataset with Channel Impulse Response (CIR)},
+  year         = {2021},
+  howpublished = {\url{https://www.iis.fraunhofer.de/en/ff/lv/dataanalytics/uwb-dataset.html}}
+}
+```
+
+---
+
+## Acknowledgments
+
+- **Fraunhofer IIS**: For providing the publicly accessible open-source UWB channel impulse response localization dataset.
+- Developed with PyTorch, NumPy, Pandas, and Matplotlib.
+
+---
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

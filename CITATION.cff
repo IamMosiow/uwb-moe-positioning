@@ -1,0 +1,17 @@
+cff-version: 1.2.0
+message: "If you use this software or research methodology in your work, please cite it as below."
+authors:
+  - family-names: "Mousavi"
+    given-names: "Seyyed Mostafa"
+title: "UWB-MoE: Deep Mixture of Experts for Ultra-Wideband Indoor Localization"
+version: 0.1.0
+date-released: 2026-10-02
+url: "https://github.com/IamMosiow/uwb-moe-positioning"
+keywords:
+  - "ultra-wideband"
+  - "indoor-localization"
+  - "mixture-of-experts"
+  - "channel-impulse-response"
+  - "pytorch"
+  - "deep-learning"
+license: MIT
